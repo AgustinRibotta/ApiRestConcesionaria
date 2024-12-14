@@ -16,17 +16,19 @@ public class CarModel {
     private String motor;
     private String color;
     private Integer cantPuertas;
+    private Integer anio;
 
     public CarModel() {
     }
 
-    public CarModel(Long id, String marca, String model, String motor, String color, Integer cantPuertas) {
+    public CarModel(Long id, String marca, String model, String motor, String color, Integer cantPuertas, Integer anio) {
         this.id = id;
         this.marca = marca;
         this.model = model;
         this.motor = motor;
         this.color = color;
         this.cantPuertas = cantPuertas;
+        this.anio = anio;
     }
 
     public Long getId() {
@@ -75,5 +77,13 @@ public class CarModel {
 
     public void setCantPuertas(Integer cantPuertas) {
         this.cantPuertas = cantPuertas;
+    }
+
+    public Integer getAnio() {
+        return anio;
+    }
+
+    public void setAnio(Integer anio) {
+        this.anio = anio;
     }
 }

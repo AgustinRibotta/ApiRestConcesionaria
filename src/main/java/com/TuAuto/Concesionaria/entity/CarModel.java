@@ -6,21 +6,21 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class AutoModel {
+public class CarModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     private String marca;
     private String model;
     private String motor;
     private String color;
     private Integer cantPuertas;
 
-    public AutoModel() {
+    public CarModel() {
     }
 
-    public AutoModel(Integer id, String marca, String model, String motor, String color, Integer cantPuertas) {
+    public CarModel(Long id, String marca, String model, String motor, String color, Integer cantPuertas) {
         this.id = id;
         this.marca = marca;
         this.model = model;
@@ -29,11 +29,11 @@ public class AutoModel {
         this.cantPuertas = cantPuertas;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

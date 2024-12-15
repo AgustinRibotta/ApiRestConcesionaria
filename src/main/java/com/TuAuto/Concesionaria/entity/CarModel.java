@@ -1,9 +1,9 @@
 package com.TuAuto.Concesionaria.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+
 
 @Entity
 public class CarModel {
@@ -11,7 +11,9 @@ public class CarModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotNull(message = "Not null")
     private String marca;
+    @NotNull(message = "Not null")
     private String model;
     private String motor;
     private String color;
@@ -21,7 +23,7 @@ public class CarModel {
     public CarModel() {
     }
 
-    public CarModel(Long id, String marca, String model, String motor, String color, Integer cantPuertas, Integer anio) {
+    public CarModel(Long id,String marca, String model, String motor, String color, Integer cantPuertas, Integer anio) {
         this.id = id;
         this.marca = marca;
         this.model = model;

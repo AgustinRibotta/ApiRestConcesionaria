@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 
 @Service
@@ -32,5 +33,15 @@ public class CarServiceImpl implements CarService {
         @Override
         public CarModel putCar(CarModel carModel) {
                 return null;
+        }
+
+        @Override
+        public CarModel patchCar(Long id, Map<String, Object> updates) {
+                return null;
+        }
+
+        @Override
+        public void deleteCar(Long id) {
+
         }
 }

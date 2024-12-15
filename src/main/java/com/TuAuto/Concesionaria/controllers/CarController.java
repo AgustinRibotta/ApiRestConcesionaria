@@ -94,5 +94,26 @@ public class CarController {
         return ResponseEntity.ok(response);
     }
 
+    @PatchMapping("/{id}")
+    public ResponseEntity<?> patchCar(@PathVariable Long id, @RequestBody Map<String, Object> updates) {
+        try {
+            CarModel updatedCar = carServiceImpl.patchCar(id, updates);
+
+            Map<String, Object> response = Map.of(
+                    "message", "Car updated successfully",
+                    "data", updatedCar
+            );
+
+            return ResponseEntity.ok(response);
+        } catch (ResourceNotFoundException ex) {
+            throw ex;
+        } catch (IllegalArgumentException ex) {
+            return ResponseEntity.badRequest().body(Map.of(
+                    "error", "Invalid field",
+                    "message", ex.getMessage()
+            ));
+        }
+    }
+
 
 }

@@ -3,13 +3,14 @@ package com.TuAuto.Concesionaria.services;
 import com.TuAuto.Concesionaria.entity.CarModel;
 import com.TuAuto.Concesionaria.repository.CarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Map;
 
-
 @Service
+@ConditionalOnProperty(name = "service.products", havingValue = "car")
 public class CarServiceImpl implements CarService {
 
         @Autowired
@@ -32,7 +33,7 @@ public class CarServiceImpl implements CarService {
 
         @Override
         public CarModel putCar(CarModel carModel) {
-                return null;
+                return carRepository.save(carModel);
         }
 
         @Override
@@ -42,6 +43,6 @@ public class CarServiceImpl implements CarService {
 
         @Override
         public void deleteCar(Long id) {
-
+                 carRepository.deleteById(id);
         }
 }

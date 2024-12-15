@@ -5,3 +5,4 @@ import com.TuAuto.Concesionaria.entity.CarModel;
 
 public interface CarRepository extends JpaRepository<CarModel, Long> {
 }
+

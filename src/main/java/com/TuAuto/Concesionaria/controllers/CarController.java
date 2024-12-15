@@ -49,10 +49,8 @@ public class CarController {
         return ResponseEntity.ok(car);
     }
 
-
     @PostMapping
     public ResponseEntity<?> postCar( @RequestBody @Valid  CarModel carModel) {
-
         CarModel savedCar = carServiceImpl.postCar(carModel);
 
         // Construimos la URI con el ID generado

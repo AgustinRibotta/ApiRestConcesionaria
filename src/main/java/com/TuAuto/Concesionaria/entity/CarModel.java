@@ -1,9 +1,10 @@
 package com.TuAuto.Concesionaria.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-
 
 @Entity
 public class CarModel {
@@ -15,9 +16,15 @@ public class CarModel {
     private String marca;
     @NotNull(message = "Not null")
     private String model;
+    @NotNull(message = "Not null")
     private String motor;
+    @NotNull(message = "Not null")
     private String color;
+    @NotNull(message = "Not null")
+    @Min(value = 3, message = "The number of doors must be 3 or 5")
+    @Max(value = 5, message = "The number of doors must be 3 or 5")
     private Integer cantPuertas;
+    @NotNull(message = "Not null")
     private Integer anio;
 
     public CarModel() {
